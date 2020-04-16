@@ -29,6 +29,35 @@ app.post('/wa', function(req, res) {
   res.end(twiml.toString());
 });
 
+app.get('/photo', function (req, res) {
+  res.send('Sending photo to Naman!');
+  const client = new twilio(accountSid, authToken);
+
+client.messages
+  .create({
+     mediaUrl: ['https://images.unsplash.com/photo-1545093149-618ce3bcf49d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'],
+     from: 'whatsapp:+14155238886',
+     body: `Automated picture of taco!`,
+     //to: 'whatsapp:+919867104169'
+     to: 'whatsapp:+919820415569'
+   })
+  .then(message => console.log(message.sid));
+});
+
+app.get('/location', function (req, res) {
+  res.send('Sending location to Naman!');
+  const client = new twilio(accountSid, authToken);
+
+client.messages
+  .create({
+     from: 'whatsapp:+14155238886',
+     body: `Automated location of favourite restaurant!`,
+     persistentAction: ['geo:18.9623642,72.8023373|Naturals'],
+     //to: 'whatsapp:+919867104169'
+     to: 'whatsapp:+919820415569'
+   })
+  .then(message => console.log(message.sid));
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
