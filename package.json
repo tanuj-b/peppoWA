@@ -1,0 +1,23 @@
+{
+  "name": "peppowa",
+  "version": "1.0.0",
+  "description": "whatsapp for peppo rider",
+  "main": "index.js",
+  "scripts": {
+    "test": "help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanuj-b/peppoWA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanuj-b/peppoWA/issues"
+  },
+  "homepage": "https://github.com/tanuj-b/peppoWA#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "twilio": "^3.42.2"
+  }
+}
